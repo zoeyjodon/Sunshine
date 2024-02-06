@@ -105,7 +105,8 @@ namespace video {
     int
     convert(platf::img_t &img) override {
       // If we need to add aspect ratio padding, we need to scale into an intermediate output buffer
-      bool requires_padding = (sw_frame->width != sws_output_frame->width || sw_frame->height != sws_output_frame->height);
+      // bool requires_padding = (sw_frame->width != sws_output_frame->width || sw_frame->height != sws_output_frame->height);
+      bool requires_padding = false;
 
       // Setup the input frame using the caller's img_t
       sws_input_frame->data[0] = img.data;
